@@ -424,6 +424,27 @@ static void handle_key_press(xcb_key_press_event_t *event) {
     }
 
     switch (ksym) {
+    case XKB_KEY_F6:
+    case XKB_KEY_XF86AudioLowerVolume:
+    case XKB_KEY_F7:
+    case XKB_KEY_XF86AudioRaiseVolume:
+    case XKB_KEY_F8:
+    case XKB_KEY_XF86AudioMute:
+    case XKB_KEY_F10:
+    case XKB_KEY_XF86AudioPlay:
+    case XKB_KEY_XF86AudioStop:
+    case XKB_KEY_F11:
+    case XKB_KEY_XF86AudioNext:
+    case XKB_KEY_F9:
+    case XKB_KEY_XF86AudioPrev:
+    case XKB_KEY_F5:
+    case XKB_KEY_XF86Display:
+    case XKB_KEY_XF86MonBrightnessUp:
+    case XKB_KEY_XF86MonBrightnessDown:
+        xcb_send_event(conn, true, screen->root, XCB_EVENT_MASK_BUTTON_PRESS, (char *)event);
+    }
+
+    switch (ksym) {
         case XKB_KEY_j:
         case XKB_KEY_m:
         case XKB_KEY_Return:

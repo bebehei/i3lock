@@ -1,3 +1,5 @@
+**This repository has got hazardous commits, which only work for me!**
+
 i3lock - improved screen locker
 ===============================
 [i3lock](https://i3wm.org/i3lock/)> is a simple screen locker like slock.
